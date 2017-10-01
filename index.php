@@ -19,8 +19,7 @@ $api = new \Yandex\Geo\Api();
 <div class="result" align="center">
 <h3>
 <?php 
-if (isset($_GET['do_search'])) 
-{
+if (isset($_GET['do_search'])) {
     if (!empty($_GET['search'])) {
         // Поиск по адресу
         $api->setQuery($_GET['search']);
@@ -28,28 +27,23 @@ if (isset($_GET['do_search']))
         $api
             ->setLang(\Yandex\Geo\Api::LANG_US) // Выбор языка
             ->load();
-
         $response = $api->getResponse();
         // Список найденных точек
         $collection = $response->getList();
 
         if ($response->getFoundCount() == 0) {
             echo "Ничего не найдено!";
-        }else
-        {
-            foreach ($collection as $item)
-            {
+        } else {
+            foreach ($collection as $item) {
                 echo $item->getAddress() . '<br>'; // вернет адрес
                 echo 'Широта: ' . $item->getLatitude() . '<br>'; // широта
                 echo 'Долгота: ' . $item->getLongitude() . '<hr>'; // долгота
             }
         }
-    }else
-    {
+    } else {
         echo "Введите адрес!";
     }
-}else
-{
+} else {
     echo "Введите адрес!";
 }
 ?>
