@@ -6,7 +6,6 @@ $api = new \Yandex\Geo\Api();
 <html>
 <head>
 	<title>Сервис поиска yandex/geo</title>
-    <link rel="stylesheet" type="text/css" href="style/background.css">
 </head>
 <body>
 <div class="search" align="center">
@@ -49,6 +48,5 @@ if (isset($_GET['do_search'])) {
 ?>
 </h3>
 </div>
-<script type="text/javascript" src="js/snow.js"></script>
 </body>
 </html>
